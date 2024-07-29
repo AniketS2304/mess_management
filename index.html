@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mess Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="header-left">
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="logo">
+                    <h1>Mess</h1>
+                </div>
+            </div>
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-options">
+                <a href="#login" class="btn">Login</a>
+                <a href="#signup" class="btn">Sign Up</a>
+            </div>
+            <nav class="nav-mobile">
+                <ul class="mobile-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#login" class="btn">Login</a></li>
+                    <li><a href="#signup" class="btn">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container main-container">
+            <section id="home">
+                <h2>Welcome to Mess Management System</h2>
+                <p>Your ultimate solution for managing daily mess requirements. Choose your meal plan and let us take care of the rest!</p>
+                <a href="#signup" class="btn">Get Started</a>
+            </section>
+            <section id="about">
+                <h2>About Us</h2>
+                <p>Our mess management system offers flexible meal plans to suit your needs. Choose between one-time or two-time daily meals and easily manage your preferences through our user-friendly interface. Our system ensures that the admin knows exactly how many plates to prepare, reducing food waste and improving efficiency.</p>
+            </section>
+            <!-- <section id="features">
+                <h2>Features</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3>Customer Dashboard</h3>
+                        <p>Update your meal preferences, cancel meals for specific days, make payments, and track your remaining days all in one place.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Admin Dashboard</h3>
+                        <p>View the number of plates needed for each day, manage customer preferences, and streamline mess operations efficiently.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Flexible Plans</h3>
+                        <p>Choose between one-time or two-time daily meals. Adjust your plan based on your schedule and preferences.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Payment Options</h3>
+                        <p>Secure and easy payment options for your convenience. Track your payment history and manage your subscription seamlessly.</p>
+                    </div>
+                </div>
+            </section> -->
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>Have questions or need assistance? Get in touch with our team!</p>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
