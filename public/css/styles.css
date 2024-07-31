@@ -2,6 +2,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    
 }
 
 .header-container{
@@ -53,8 +54,13 @@ header {
 }
 
 .nav-desktop a:hover, .mobile-menu a:hover, .btn:hover {
-    background-color: #433D8B;
+    background-color: rgb(79, 73, 147);
 }
+.btn:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
 
 .auth-options a {
     margin-left: 10px;
@@ -66,6 +72,7 @@ header {
     text-align: center;
     display: inline-block;
     padding: 10px 20px;
+    align-self: center;
 }
 
 section {
@@ -119,6 +126,12 @@ form button {
     cursor: pointer;
 }
 
+/* form button:hover{
+    transform: scale();
+} */
+.auth-btn{
+
+}
 form button:hover {
     background-color: #433D8B;
 }
@@ -141,11 +154,11 @@ form button:hover {
     width: 25px;
     background-color: #fff;
     margin: 4px 0;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(10px, 10px);
 }
 
 .menu-toggle.active span:nth-child(2) {
@@ -176,7 +189,10 @@ form button:hover {
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+@media (max-width: 765px) {
+    form{
+     margin: 0 20px;
+    }
     .nav-desktop {
         display: none;
     }
