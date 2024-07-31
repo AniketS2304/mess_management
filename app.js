@@ -8,6 +8,7 @@ const app = express()
 
 const User = require('./models/User.js')
 
+app.set("view engine", "ejs")
 // async function main(){
 //     await mongoose.connect('mongodb://127.0.0.1:27017/messProject');
 // }
@@ -30,11 +31,7 @@ async function main() {
         console.log('Error While Connecting to Database', err);
     }
 }
-
 main();
-
-
-
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'auth')));
@@ -60,27 +57,23 @@ app.post('/signup', async (req, res) => {
             phone_no: phone_no,
             password: password
         })
-        await user.save()
-        .then((res),()=>{
-            console.log("User Inserted Into Database")
-        })
-        .catch(err=>(console.log('Error while Inserting User', err)))
+        console.log("User Inserted Into Database")
+        return res.status(201).render("userDash", {user});
     }catch(err){
-        console.log(err)
+        // console.log('Error while Inserting User', err);
+        return res.status(500).json({ error: 'Server error' });
     }
-    res.send("User DashBoard")
 });
 
 
 app.post('/login', async (req, res) => {
    try{
-
        const {email, password} = req.body;
-       console.log(email)           //debug
-       console.log(typeof(password))    //debug
+    //    console.log(email)           //debug
+    //    console.log(typeof(password))    //debug
        
        const user = await User.findOne({email: `${email}`});
-       console.log(user)        //debug
+    //    console.log(user)        //debug
         if(!user){
             return res.status(400).send('Invalid credentials');
         }
@@ -91,9 +84,8 @@ app.post('/login', async (req, res) => {
         }
 
         const token = jwt.sign({ userId: user._id }, 'aniket**2304', { expiresIn: '1h' });
-        res.status(200).json({ token });
+        res.status(200).render("adminDash",{user});
 
-        // else res.send("User DashBoard")
     } catch (err) {
         res.send('Server error' + err);
     }
